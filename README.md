@@ -139,5 +139,4 @@ The project demonstrates a complete data analysis and modeling pipeline for pred
 - Explore additional data sources to enhance prediction accuracy.
 - Automate the model building and deployment process.
 
-<h2 align="center" style="color:blue">Contact</h2>
 
