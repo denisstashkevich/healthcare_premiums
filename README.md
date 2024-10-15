@@ -1,19 +1,143 @@
-Healthcare Premium Prediction
+# Insurance Annual Premium Analysis and Prediction
 
-This project aims to analyze healthcare premiums and build predictive models for individuals across different age groups. The goal is to understand the factors influencing healthcare premiums and develop accurate models to predict premium amounts. The project involves several key steps:
+<h2 align="center" style="color:blue">Project Description</h2>
 
-Data Loading and Cleaning: The dataset is loaded from an Excel file, and data cleaning operations are performed to ensure data quality. This includes handling missing values, removing duplicates, and correcting inconsistencies such as negative values for dependents and unrealistic ages.
+This project focuses on analyzing insurance premium data and building models to predict the **annual premium amount**. We utilize various data cleaning methods, Exploratory Data Analysis (EDA), feature engineering, and machine learning models, including Linear Regression, Ridge, Lasso, and XGBoost.
 
-Exploratory Data Analysis (EDA): EDA is conducted to understand the distribution of both numerical and categorical features. Techniques such as univariate and bivariate analysis, as well as visualizations like histograms, scatter plots, and box plots, are used to identify patterns, relationships, and outliers in the data.
+<h2 align="center" style="color:blue">Project Structure</h2>
 
-Feature Engineering: Features are transformed and new features are created to enhance the predictive power of the model. This includes calculating a health risk score based on medical history, normalizing numerical features, encoding categorical features, and creating dummy variables for nominal categories.
+1. **Data Loading**
+2. **Exploratory Data Analysis and Cleaning**
+    - Handling Missing Values
+    - Removing Duplicates
+    - Cleaning Numerical and Categorical Features
+    - Outlier Analysis
+3. **Feature Engineering**
+    - Creating New Features
+    - Encoding Categorical Variables
+    - Feature Selection and Multicollinearity Check
+4. **Model Building**
+    - Linear Regression
+    - Ridge Regression
+    - XGBoost Regression
+5. **Model Evaluation and Results Analysis**
+    - Model Performance Metrics
+    - Residual Analysis
+    - Identifying Extreme Errors
 
-Feature Selection and Multicollinearity Analysis: To improve model efficiency, irrelevant or redundant features are removed. Multicollinearity is checked using Variance Inflation Factor (VIF), and features with high VIF values are dropped to reduce redundancy.
+<h2 align="center" style="color:blue">Technologies and Libraries</h2>
 
-Model Training: Various machine learning models are trained to predict healthcare premiums, including Linear Regression, Ridge Regression, and XGBoost. The dataset is split into training and testing sets, and models are evaluated based on metrics such as Mean Squared Error (MSE) and R-squared scores.
+- Python 3.x
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- statsmodels
+- XGBoost
 
-Hyperparameter Tuning: Hyperparameter tuning is performed using techniques like RandomizedSearchCV to optimize model performance, especially for complex models like XGBoost.
+<h2 align="center" style="color:blue">Installation</h2>
 
-Error Analysis: Residual analysis is conducted to understand the prediction errors. Extreme errors are identified, and features contributing to these errors are analyzed. It is noted that a separate model might be required for certain demographics, such as younger individuals, to improve accuracy.
+1. **Clone the Repository:**
 
-The overall objective is to improve the accuracy of premium predictions and provide insights into the key factors affecting healthcare costs.
+    ```bash
+    git clone https://github.com/yourusername/insurance-premium-prediction.git
+    cd insurance-premium-prediction
+    ```
+
+2. **Create and Activate a Virtual Environment (Optional):**
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+3. **Install Required Dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+<h2 align="center" style="color:blue">Usage</h2>
+
+1. **Data Preparation:**
+
+    Ensure that the `premiums.xlsx` file is located in the root directory of the project.
+
+2. **Run Jupyter Notebook:**
+
+    ```bash
+    jupyter notebook
+    ```
+
+    Open the `Insurance_Premium_Prediction.ipynb` file and follow the steps for data analysis and model building.
+
+<h2 align="center" style="color:blue">Data Description</h2>
+
+- **age**: Age of the insured individual.
+- **income_lakhs**: Annual income in lakhs.
+- **number_of_dependants**: Number of dependents.
+- **gender**: Gender.
+- **region**: Region of residence.
+- **marital_status**: Marital status.
+- **bmi_category**: Body Mass Index category.
+- **smoking_status**: Smoking status.
+- **employment_status**: Employment status.
+- **income_level**: Income level.
+- **medical_history**: Medical history.
+- **insurance_plan**: Insurance plan.
+- **annual_premium_amount**: Annual premium amount (target variable).
+
+<h2 align="center" style="color:blue">Methodology</h2>
+
+1. **Data Loading and Preprocessing:**
+    - Import libraries.
+    - Load data from Excel.
+    - Clean column names (convert to lowercase and replace spaces with underscores).
+
+2. **Exploratory Data Analysis (EDA):**
+    - Analyze missing values and duplicates.
+    - Statistical description of data.
+    - Handle anomalies and outliers in `age` and `income_lakhs` features.
+    - Visualize distributions and relationships between features.
+
+3. **Feature Engineering:**
+    - Create `total_risk_score` based on medical history.
+    - Normalize the risk score.
+    - Encode categorical variables using one-hot encoding.
+    - Feature selection and removal of multicollinear features with high VIF.
+
+4. **Model Building and Evaluation:**
+    - Split data into training and testing sets.
+    - Train Linear Regression, Ridge, and XGBoost models.
+    - Evaluate models using R², MSE, and RMSE metrics.
+    - Hyperparameter tuning for XGBoost using RandomizedSearchCV.
+    - Analyze feature importance and residuals.
+
+<h2 align="center" style="color:blue">Results</h2>
+
+- **Linear Regression:**
+    - Model coefficients visualized to understand the impact of each feature.
+    - Performance metrics: R², MSE, RMSE.
+
+- **Ridge Regression:**
+    - Improved performance metrics compared to Linear Regression due to regularization.
+
+- **XGBoost Regression:**
+    - Best performance metrics after hyperparameter tuning.
+    - Feature importance displayed for model interpretation.
+    - Residual analysis identified 30% extreme errors associated with specific customer segments.
+
+<h2 align="center" style="color:blue">Conclusion</h2>
+
+The project demonstrates a complete data analysis and modeling pipeline for predicting insurance premiums. Key factors influencing the premium amount were identified, and model errors were analyzed, suggesting potential improvements such as building separate models for specific customer segments.
+
+<h2 align="center" style="color:blue">Future Work</h2>
+
+- Develop specialized models for segments with high error rates.
+- Implement more advanced outlier and anomaly detection methods.
+- Explore additional data sources to enhance prediction accuracy.
+- Automate the model building and deployment process.
+
+<h2 align="center" style="color:blue">Contact</h2>
+
